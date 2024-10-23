@@ -21,6 +21,13 @@ To contribute to this project, follow these steps:
 
 ## Project Requirements
 
+### Unit Tests:
+- **Coverage**: Implement unit tests to ensure critical logic is covered.
+- **Testing Framework**: Use **XCTest** to create unit tests for the business logic and API interactions.
+- **Mocking**: Use mocking techniques to test network requests, avoiding actual API calls during testing.
+- **Core Features**: Ensure that core functionalities, including movie search, API data handling, and any custom views, are thoroughly tested.
+
+
 ### Basic Features:
 1. **Movie Search Screen**: 
    - Provide a search interface for users to search for movies by title.
@@ -48,12 +55,11 @@ To run this project, simply clone the repository, open the project in **Xcode**,
 ## Future Extensions
 If the project proceeds to subsequent stages, you may be asked to:
 - **Movie Detail Screen**: When a user selects a movie, navigate to a detail screen that shows more information about the movie, including its poster, title, release date, and description. Create a visually appealing UI using **SwiftUI** animations and transitions.
-- **Favorite Movies**: Implement functionality to allow users to save their favorite movies. Use **UserDefaults** or **Core Data** for local persistence.
-- Add a user review feature with authentication (e.g., Sign in with Apple).
+- **Favorite Movies**: Implement functionality to allow users to save their favorite movies. Use whatever local persistence you feel is appropriate.
 - Implement a "Recommended Movies" section using more advanced state management and caching techniques.
 - Handle edge cases such as offline mode, errors, and data persistence.
 
 ## Helpful Resources
 - [The Movie Database API Documentation](https://www.themoviedb.org/documentation/api)
 
-Good luck and enjoy building the Movie Explorer App!
+Good luck and enjoy building the My Movies App!
