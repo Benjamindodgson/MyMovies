@@ -6,7 +6,7 @@ Welcome to the **My Movies App**! This project is part of a technical interview 
 To contribute to this project, follow these steps:
 1. **Clone the Repository**: Pull the repository to your local machine.
    ```sh
-   git clone <repository_url>
+   git clone https://github.com/Benjamindodgson/MyMovies.git
    ```
 2. **Create a New Branch**: Create a new branch for your changes.
    ```sh
