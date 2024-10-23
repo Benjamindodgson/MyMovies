@@ -3,6 +3,7 @@
 Welcome to the **My Movies App**! This project is part of a technical interview and serves as an opportunity to showcase your development skills using **SwiftUI** and **structured concurrency**. The application allows users to search for movies.
 
 ## Getting Started
+
 To contribute to this project, follow these steps:
 1. **Clone the Repository**: Pull the repository to your local machine.
    ```sh
@@ -18,6 +19,7 @@ To contribute to this project, follow these steps:
    git push origin feature/your-feature-name
    ```
    Then, go to GitHub and create a pull request for your branch.
+5. **Simulator Video**: Record a simulator video demonstrating the functionality of the app and attach it to the final PR.
 
 ## Project Requirements
 
@@ -44,6 +46,7 @@ This project uses the **The Movie Database (TMDb)** API to fetch movie data. You
 You can use the above **API Key** and **Read Access Token** to authenticate your requests.
 
 ## Expectations
+- **Simulator Video**: Record a simulator video demonstrating the functionality of the app and attach it to the final PR.
 - **Clean Code**: Write clean, readable code that follows best practices.
 - **Decision Making**: Document your architectural decisions and why you chose certain approaches.
 - **SwiftUI Expertise**: Leverage SwiftUI for a modern, declarative approach to UI design.
@@ -63,3 +66,65 @@ If the project proceeds to subsequent stages, you may be asked to:
 - [The Movie Database API Documentation](https://www.themoviedb.org/documentation/api)
 
 Good luck and enjoy building the My Movies App!
+
+
+
+
+
+
+# Pull Request (PR) Checklist for My Movies App
+
+Before submitting your Pull Request (PR), please go through the following checklist to ensure all project standards and requirements are met.
+
+## Code Quality
+- [ ] **Clean Code**: Ensure the code is clean, readable, and follows best practices.
+- [ ] **Naming Conventions**: Use clear and descriptive names for variables, functions, and classes.
+- [ ] **Comments**: Add necessary comments to explain non-obvious code logic.
+- [ ] **Error Handling**: Handle errors gracefully, especially for network calls.
+
+## SwiftUI Requirements
+- [ ] **SwiftUI Usage**: Leverage SwiftUI for building the user interface.
+- [ ] **Animations and Transitions**: Add smooth animations or transitions where applicable.
+
+## Concurrency
+- [ ] **Structured Concurrency**: Use `async/await` effectively for managing API calls.
+- [ ] **Thread Safety**: Verify all async operations are handled appropriately to prevent race conditions or deadlocks.
+
+## Testing
+- [ ] **Unit Tests**: Ensure unit tests are provided for core business logic and API interactions.
+- [ ] **Test Coverage**: Aim for at least 80% test coverage of critical code paths.
+- [ ] **Mocking**: Mock network requests to avoid actual API calls during testing.
+
+## Project Features
+- [ ] **Movie Search Screen**: Ensure the search screen allows users to search movies by title and shows results in a list.
+- [ ] **API Integration**: Confirm API integration is working properly, including fetching movie data and displaying the necessary information.
+
+## Documentation
+- [ ] **README Updated**: Update the README file if any project requirements have changed or if additional instructions are necessary.
+- [ ] **Architectural Decisions**: Document any major architectural decisions or approaches you have taken.
+
+## Branch and PR Management
+- [ ] **Branch Naming**: Use an appropriate branch name following the naming convention (`feature/your-feature-name`).
+- [ ] **Pull Request Title**: Give your PR a descriptive title that summarizes the changes.
+- [ ] **Pull Request Description**: Provide a clear description of the changes made, why they were necessary, and any additional context.
+- [ ] **Code Review**: Request a code review from relevant team members.
+
+## Functionality Checks
+- [ ] **Manual Testing**: Perform manual testing to ensure the app works as expected (including edge cases like empty search results, network failures, etc.).
+- [ ] **Responsiveness**: Ensure that the UI is responsive across different device sizes.
+- [ ] **Favorites Feature**: If applicable, check that users can save and view their favorite movies without issues.
+
+## Future Considerations
+- [ ] **Scalability**: Consider how the current code will be extended in future stages, such as adding more features (e.g., detailed movie views, user reviews, etc.).
+- [ ] **Offline Handling**: Ensure the application can handle offline scenarios, and inform users appropriately.
+
+## Final Steps
+- [ ] **Conflict Resolution**: Make sure your branch has no merge conflicts with the `main` branch.
+- [ ] **Pass CI/CD**: Ensure all checks in CI/CD pipeline are passing.
+
+Once all items are checked, you're ready to submit the PR for review!
+
+---
+
+Please ensure all the above items are addressed before submitting. This will help speed up the review process and maintain the quality of our codebase. Thank you for your contribution!
+
