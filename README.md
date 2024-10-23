@@ -120,7 +120,6 @@ Before submitting your Pull Request (PR), please go through the following checkl
 
 ## Final Steps
 - [ ] **Conflict Resolution**: Make sure your branch has no merge conflicts with the `main` branch.
-- [ ] **Pass CI/CD**: Ensure all checks in CI/CD pipeline are passing.
 
 Once all items are checked, you're ready to submit the PR for review!
 
