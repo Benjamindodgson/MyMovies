@@ -29,20 +29,37 @@
 		F07CB6CA2CC93A8D00977A0B /* MyMoviesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyMoviesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		F01E00BE2D1DF926002DF983 /* Exceptions for "MyMovies" folder in "MyMovies" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"Tests/MovieService+Tests.swift",
+			);
+			target = F07CB6AE2CC93A8B00977A0B /* MyMovies */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+		F01E00BF2D1DF926002DF983 /* Exceptions for "MyMovies" folder in "Copy Bundle Resources" phase from "MyMovies" target */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			buildPhase = F07CB6AD2CC93A8B00977A0B /* Resources */;
+			membershipExceptions = (
+				Sources/Models/Movie.swift,
+				Sources/ViewModels/MovieSearchViewModel.swift,
+				Sources/Views/MovieSearchView.swift,
+				"Tests/MovieService+Tests.swift",
+			);
+		};
+/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		F07CB6B12CC93A8B00977A0B /* MyMovies */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				F01E00BE2D1DF926002DF983 /* Exceptions for "MyMovies" folder in "MyMovies" target */,
+				F01E00BF2D1DF926002DF983 /* Exceptions for "MyMovies" folder in "Copy Bundle Resources" phase from "MyMovies" target */,
+			);
 			path = MyMovies;
-			sourceTree = "<group>";
-		};
-		F07CB6C32CC93A8D00977A0B /* MyMoviesTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = MyMoviesTests;
-			sourceTree = "<group>";
-		};
-		F07CB6CD2CC93A8D00977A0B /* MyMoviesUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = MyMoviesUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -76,8 +93,6 @@
 			isa = PBXGroup;
 			children = (
 				F07CB6B12CC93A8B00977A0B /* MyMovies */,
-				F07CB6C32CC93A8D00977A0B /* MyMoviesTests */,
-				F07CB6CD2CC93A8D00977A0B /* MyMoviesUITests */,
 				F07CB6B02CC93A8B00977A0B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -130,9 +145,6 @@
 			dependencies = (
 				F07CB6C22CC93A8D00977A0B /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				F07CB6C32CC93A8D00977A0B /* MyMoviesTests */,
-			);
 			name = MyMoviesTests;
 			packageProductDependencies = (
 			);
@@ -152,9 +164,6 @@
 			);
 			dependencies = (
 				F07CB6CC2CC93A8D00977A0B /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				F07CB6CD2CC93A8D00977A0B /* MyMoviesUITests */,
 			);
 			name = MyMoviesUITests;
 			packageProductDependencies = (
