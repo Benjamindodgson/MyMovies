@@ -1,49 +1,52 @@
 import Foundation
 import SwiftUI
 
-@Observable class MovieSearchViewModel {
-    var searchText = ""
-    var movies: [Movie] = []
-    var isLoading = false
-    var error: Error?
-    
-    enum MovieServiceError: Error, Equatable {
-        case invalidSearchText
+@Observable
+class MovieSearchViewModel: ViewModel {
+                
+    enum MovieSearchError: Error, Equatable {
         case networkError
+        case noResults
     }
     
     enum State: Equatable {
         case idle
         case loading
         case loaded(movies: [Movie])
-        case failed(error: MovieServiceError)
+        case failed(error: MovieSearchError)
     }
     
-    private let movieService = MovieService()
-    private var searchTask: Task<Void, Never>?
+    var searchText: String = ""
+    var state: State = .idle
     
-    func searchMovies() {
+    private let service: MovieServiceProtocol
+    
+    init(with service: MovieServiceProtocol) {
+        self.service = service
+    }
+    
+    private var searchTask: Task<Void, Never>?
+    func searchMovies(with text: String) {
         searchTask?.cancel()
-        searchTask = Task {
-            do {
-                isLoading = true
-                error = nil
+        searchTask = Task { [weak self] in
             
-                let results = try await movieService.searchMovies(with: searchText)
+            guard let self else { return }
+
+            do {
+                state = .loading
+                let results = try await service.searchMovies(with: text)
                 if !Task.isCancelled {
                     withAnimation {
-                        movies = results
+                        if results.isEmpty {
+                            self.state = .failed(error: .noResults)
+                        } else {
+                            self.state = .loaded(movies: results)
+                        }
                     }
                 }
             } catch {
-                self.error = error
+                self.state = .failed(error: .networkError)
             }
-            
-            isLoading = false
         }
     }
-}
-
-extension MovieSearchViewModel: Identifiable {
-    
 }

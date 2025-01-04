@@ -20,12 +20,6 @@ struct Movie: Model {
     }
 }
 
-extension Movie {
-    static var mock: Movie {
-        Movie(id: 1, title: "Mock Movie", overview: "Mock Overview", posterPath: nil, releaseDate: nil)
-    }
-}
-
 struct MovieResponse: Codable {
     let results: [Movie]
 }

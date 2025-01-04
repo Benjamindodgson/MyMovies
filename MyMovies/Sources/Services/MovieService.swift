@@ -4,6 +4,12 @@ protocol MovieServiceProtocol {
     func searchMovies(with query: String) async throws -> [Movie]
 }
 
+actor MockMovieService: MovieServiceProtocol {
+    func searchMovies(with query: String) async throws -> [Movie] {
+        return []
+    }
+}
+
 actor MovieService: MovieServiceProtocol {
     private let apiKey: String
     private let baseURL: String

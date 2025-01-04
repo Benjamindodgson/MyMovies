@@ -6,5 +6,5 @@
 //
 
 protocol Mock {
-    static var mock: Self { get }
+    static var mock: Self { get set }
 }

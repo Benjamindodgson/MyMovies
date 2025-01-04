@@ -6,29 +6,36 @@ struct MovieSearchView: View {
     var body: some View {
         NavigationView {
             Group {
-                if viewModel.isLoading {
+                switch viewModel.state {
+                case .idle:
+                    Text("Empty")
+                case .loading:
                     ProgressView()
                         .transition(.opacity)
-                } else {
-                    List(viewModel.movies) { movie in
+                case .loaded(let movies):
+                    List(movies) { movie in
                         MovieRowView(movie: movie)
                     }
                     .transition(.opacity)
+                case .failed(let error):
+                    Text("Error: \(error)")
+                        .transition(.opacity)
                 }
             }
-            .animation(.easeInOut, value: viewModel.isLoading)
-            .searchable(text: $viewModel.searchText, prompt: "Search movies")
+            .animation(.easeInOut, value: viewModel.state == .loading)
+            .searchable(text: $viewModel.searchText,
+                        placement: .sidebar,
+                        prompt: "Search movies")
             .onChange(of: viewModel.searchText, { old, new in
-                
-                viewModel.searchMovies()
+                viewModel.searchMovies(with: new)
             })
-            .navigationTitle("Movie Search")
+            .navigationTitle("Movies")
         }
     }
 }
 
 #Preview {
-    MovieSearchView(viewModel: MovieSearchViewModel())
+    MovieSearchView(viewModel: MovieSearchViewModel(with: MockMovieService()))
 }
 
 private struct MovieRowView: View {

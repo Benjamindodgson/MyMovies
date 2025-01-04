@@ -7,4 +7,4 @@
 
 import SwiftUI
 
-@Observable protocol ViewModel: Codable, Identifiable, Equatable, Mock {}
+protocol ViewModel: Identifiable {}
