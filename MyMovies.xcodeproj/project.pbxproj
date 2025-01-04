@@ -44,9 +44,9 @@
 			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
 			buildPhase = F07CB6AD2CC93A8B00977A0B /* Resources */;
 			membershipExceptions = (
+				Sources/Features/MovieSearch/ViewModels/MovieSearchViewModel.swift,
+				Sources/Features/MovieSearch/Views/MovieSearchView.swift,
 				Sources/Models/Movie.swift,
-				Sources/ViewModels/MovieSearchViewModel.swift,
-				Sources/Views/MovieSearchView.swift,
 				"Tests/MovieService+Tests.swift",
 			);
 		};
@@ -397,10 +397,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = MyMovies/MyMovies.entitlements;
+				CODE_SIGN_ENTITLEMENTS = MyMovies/Sources/App/MyMovies.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"MyMovies/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = LSXDX8B86V;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -436,10 +436,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = MyMovies/MyMovies.entitlements;
+				CODE_SIGN_ENTITLEMENTS = MyMovies/Sources/App/MyMovies.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"MyMovies/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = LSXDX8B86V;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;

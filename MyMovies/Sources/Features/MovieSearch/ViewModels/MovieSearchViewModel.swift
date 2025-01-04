@@ -2,8 +2,8 @@ import Foundation
 import SwiftUI
 
 @Observable
-class MovieSearchViewModel: ViewModel {
-                
+class MovieSearchViewModel<Service: Searchable>: ViewModelable {
+    
     enum MovieSearchError: Error, Equatable {
         case networkError
         case noResults
@@ -19,9 +19,9 @@ class MovieSearchViewModel: ViewModel {
     var searchText: String = ""
     var state: State = .idle
     
-    private let service: MovieServiceProtocol
+    private let service: Service
     
-    init(with service: MovieServiceProtocol) {
+    init(with service: Service) {
         self.service = service
     }
     
@@ -33,19 +33,25 @@ class MovieSearchViewModel: ViewModel {
             guard let self else { return }
 
             do {
-                state = .loading
-                let results = try await service.searchMovies(with: text)
+                withAnimation {
+                    self.state = .loading
+                }
+                let results = try await service.search(with: text)
                 if !Task.isCancelled {
                     withAnimation {
-                        if results.isEmpty {
+                        if let movies = results as? [Movie], !movies.isEmpty {
+                            self.state = .loaded(movies: movies)
+                        } else if !text.isEmpty {
                             self.state = .failed(error: .noResults)
                         } else {
-                            self.state = .loaded(movies: results)
+                            self.state = .idle
                         }
                     }
                 }
             } catch {
-                self.state = .failed(error: .networkError)
+                withAnimation {
+                    self.state = .failed(error: .networkError)
+                }
             }
         }
     }

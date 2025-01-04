@@ -1,7 +1,7 @@
 import SwiftUI
 
-struct MovieSearchView: View {
-    @State var viewModel: MovieSearchViewModel
+struct MovieSearchView<Service: Searchable>: View {
+    @State var viewModel: MovieSearchViewModel<Service>
     
     var body: some View {
         NavigationView {
